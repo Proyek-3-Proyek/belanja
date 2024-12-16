@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./assets/css/styles.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn-uicons.flaticon.com/2.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>katalog</title>
+  </head>
+  <body class="body_primary">
+    <nav class="navbar">
+      <div class="logo">
+        <i class="fa-solid fa-font-owesome"></i>
+        <a href="https://proyek-3-proyek.github.io/tokline.github.io">SHOJU</a>
+      </div>
+      <div class="menu">
+        <div class="menu-links">
+          <a href="https://proyek-3-proyek.github.io/tokline.github.io"
+            >Home <i class="i-home fi fi-rr-home"></i
+          ></a>
+          <a href="/belanja"
+            >Belanja <i class="i-belanja fi fi-rr-shopping-bag"></i
+          ></a>
+          <a href="#">Contact <i class="i-contact fi fi-rr-phone-call"></i></a>
+          <a href="/history"
+            >history <i class="fa-solid fa-clock-rotate-left"></i
+          ></a>
+        </div>
+        <div class="profil">
+          <!-- Konten tombol akan diperbarui oleh JavaScript -->
+        </div>
+      </div>
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </nav>
+
+    <div class="body">
+      <section class="content-1" id="card">
+        <div class="container-card">
+          <!-- produk yang tersedia  -->
+        </div>
+      </section>
+    </div>
+
+    <!-- Background Modal -->
+    <div class="background-modal"></div>
+
+    <!-- Modal -->
+    <div class="modal bg-white" id="orderModal">
+      <div class="modal-header">
+        <h2>Pemesanan Produk</h2>
+        <button class="modal-close" onclick="closeOrderModal()">&times;</button>
+      </div>
+      <div class="modal-content">
+        <img id="modalProductImage" src="" alt="Product Image" />
+        <div class="modal-body">
+          <h3 id="modalProductName"></h3>
+          <p id="modalProductDescription"></p>
+          <p class="price">Rp. <span id="modalProductPrice"></span></p>
+          <p class="stock">Stok: <span id="modalProductStock"></span></p>
+          <!-- Input hidden untuk ID produk -->
+          <input type="hidden" id="modalProductId" />
+        </div>
+        <div class="modal-actions">
+          <label for="modalProductQuantity">Jumlah:</label>
+          <input
+            type="number"
+            id="modalProductQuantity"
+            min="1"
+            value="1"
+            class="input-field"
+          />
+          <button onclick="orderProduct()" class="order-button">Pesan</button>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <h4>company</h4>
+            <ul>
+              <li><a href="#">about us</a></li>
+              <li><a href="#">our services</a></li>
+              <li><a href="#">privacy policy</a></li>
+              <li><a href="#">affiliate program</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>get help</h4>
+            <ul>
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">shipping</a></li>
+              <li><a href="#">returns</a></li>
+              <li><a href="#">order status</a></li>
+              <li><a href="#">payment options</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>online shop</h4>
+            <ul>
+              <li><a href="#">watch</a></li>
+              <li><a href="#">bag</a></li>
+              <li><a href="#">shoes</a></li>
+              <li><a href="#">dress</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>follow us</h4>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <p class="text-xs text-zinc-300">
+              2024 Shoju. All Rights Reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="./assets/js/katalog.js"></script>
+  </body>
+</html>
