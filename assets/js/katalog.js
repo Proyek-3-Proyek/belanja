@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     produkList.forEach((produk) => {
       const card = `
-        <div class="card" style="--clr: #009688" data-id="${produk.id}">
+        <div class="card" style="--clr: #009688" data-id="${produk.id_produk}">
           <div class="img-box">
             <img src="https://qzbythadanrtksusxdtq.supabase.co/storage/v1/object/public/gambar/${produk.gambar}" width="100" height="100" />
           </div>
