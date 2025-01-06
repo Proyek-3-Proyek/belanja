@@ -176,9 +176,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   const token = localStorage.getItem("token");
 
   if (!token) {
-    alert("Anda belum login. Silakan login terlebih dahulu.");
-    // Redirect ke halaman login jika token tidak ditemukan
-    window.location.href = "/login";
+    Swal.fire({
+      icon: "warning",
+      title: "Anda belum login",
+      text: "Silakan login terlebih dahulu.",
+      confirmButtonText: "OK",
+    }).then(() => {
+      // Redirect ke halaman login jika token tidak ditemukan
+      window.location.href = "/login";
+    });
     return;
   }
 
@@ -196,11 +202,25 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     if (!response.ok) {
       if (response.status === 401) {
-        alert("Sesi login Anda telah berakhir. Silakan login kembali.");
-        localStorage.removeItem("token"); // Hapus token yang sudah tidak valid
-        window.location.href = "/login";
+        Swal.fire({
+          icon: "warning",
+          title: "Sesi Berakhir",
+          text: "Sesi login Anda telah berakhir. Silakan login kembali.",
+          confirmButtonText: "OK",
+        }).then(() => {
+          localStorage.removeItem("token"); // Hapus token yang sudah tidak valid
+          window.location.href = "/login";
+        });
         return;
       }
+
+      Swal.fire({
+        icon: "error",
+        title: "Gagal Mengambil Data",
+        text: "Gagal mengambil data produk.",
+        confirmButtonText: "OK",
+      });
+
       throw new Error("Gagal mengambil data produk");
     }
 
@@ -261,8 +281,15 @@ function updateLoginButton() {
     // Tambahkan event listener untuk tombol Logout
     document.getElementById("logoutButton").addEventListener("click", () => {
       localStorage.removeItem("token"); // Hapus token dari localStorage
-      alert("Anda telah logout.");
-      updateLoginButton(); // Perbarui tampilan tombol
+
+      Swal.fire({
+        icon: "success",
+        title: "Logout Berhasil",
+        text: "Anda telah logout.",
+        confirmButtonText: "OK",
+      }).then(() => {
+        updateLoginButton(); // Perbarui tampilan tombol
+      });
     });
   } else {
     // Jika user belum login, tampilkan tombol Login
