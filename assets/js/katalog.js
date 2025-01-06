@@ -214,12 +214,12 @@ document.addEventListener("DOMContentLoaded", async () => {
             <img src="https://qzbythadanrtksusxdtq.supabase.co/storage/v1/object/public/gambar/${produk.gambar}" width="100" height="100" />
           </div>
           <div class="content">
-            <h2 id="nama_produk" class="pt-3">${produk.nama}</h2>
-            <p id="deskrip_produk" class="p-3">${produk.deskripsi}</p>
-            <div class="harstok pb-2">
+            <h2 id="nama_produk" class="pt-2">${produk.nama}</h2>
+            <p id="deskrip_produk" class="p-2">${produk.deskripsi}</p>
+            <div class="harstok pb-1">
               <p id="harga_produk" class="text-sky-400">Harga: Rp. ${produk.harga}</p>
             </div>
-            <div class="stock pb-2">
+            <div class="stock pb-1">
               <p id="stock_produk" class="text-sky-400">Stok: ${produk.qty}</p>
             </div>
             <button class="button-buy" onclick="openOrderModal(this)">
