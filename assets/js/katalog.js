@@ -235,7 +235,7 @@ document.addEventListener("DOMContentLoaded", async () => {
           </div>
           <div class="content">
             <h2 id="nama_produk" class="pt-2">${produk.nama}</h2>
-            <p id="deskrip_produk" class="p-2">${produk.deskripsi}</p>
+            <p id="deskrip_produk" class="p-3">${produk.deskripsi}</p>
             <div class="harstok pb-1">
               <p id="harga_produk" class="text-sky-400">Harga: Rp. ${produk.harga}</p>
             </div>
