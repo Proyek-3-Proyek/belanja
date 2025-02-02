@@ -157,7 +157,7 @@ async function orderProduct() {
       // Simulasikan pengecekan status transaksi secara otomatis setelah pembayaran selesai
       setTimeout(() => {
         updateTransactionStatus(result.data.transaction_id);
-      }, 5000); // Delay 5 detik untuk simulasi callback
+      }, 3000); // Delay 5 detik untuk simulasi callback
     }, 2000);
   } catch (error) {
     console.error("Terjadi kesalahan:", error);
