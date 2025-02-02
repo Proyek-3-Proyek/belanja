@@ -97,6 +97,8 @@ async function orderProduct() {
     id_produk: productId,
     jumlah: quantity,
     total_harga: totalHarga,
+    finish_redirect_url:
+      "https://proyek-3-proyek.github.io/tokline.github.io/belanja",
   };
 
   try {
@@ -280,7 +282,7 @@ function updateLoginButton() {
 
     // Tambahkan event listener untuk tombol Logout
     document.getElementById("logoutButton").addEventListener("click", () => {
-      localStorage.removeItem("token"); 
+      localStorage.removeItem("token");
 
       Swal.fire({
         icon: "success",
@@ -288,8 +290,8 @@ function updateLoginButton() {
         text: "Anda telah logout.",
         confirmButtonText: "OK",
       }).then(() => {
-        updateLoginButton(); 
-        window.location.href = "/login"; 
+        updateLoginButton();
+        window.location.href = "/login";
       });
     });
   } else {
